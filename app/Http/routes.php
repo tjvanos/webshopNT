@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', 'ProductController@index');
+Route::get('/','ShopController@index');
 
+Route::get('about','ShopController@about');
 
+Route::get('product','ProductController@index');

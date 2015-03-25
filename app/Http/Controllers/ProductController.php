@@ -4,12 +4,14 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use DB;
 
 class ProductController extends Controller {
 
 	public function index(){
-
-        return view('product.index');
+        $producten= DB::table('producten')->get();
+        dd($producten);
+        return view('product.index', compact('producten'));
     }
 
 }

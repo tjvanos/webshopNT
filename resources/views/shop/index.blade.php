@@ -1,5 +1,5 @@
 @extends('master')
 
 @section('content')
-    <h1>Products</h1>
-    @stop
+<h1>home</h1>
+@stop
