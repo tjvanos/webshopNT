@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="{{ URL::asset('/css/app.css') }}" />
 </head>
 <body>
-<nav class="navbar navbar-default">
+<div class="container">
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -38,5 +39,6 @@
 @yield('content')
 
 @yield('footer')
+</div>
 </body>
 </html>

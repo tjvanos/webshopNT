@@ -9,9 +9,20 @@ use DB;
 class ProductController extends Controller {
 
 	public function index(){
-        $producten= DB::table('producten')->get();
-        dd($producten);
-        return view('product.index', compact('producten'));
+        $categorien= DB::table('categorien')->get();
+
+        return view('product.index', compact('categorien'));
+    }
+
+    public function showCategory($id){
+    $producten= DB::table('categorie_has_producten')->join('producten','product_id','=','producten.id')->where('categorie_id', '=', $id)->get();
+    return view('product.productlijst', compact('producten'));
+
+        }
+    public function showProduct($id){
+        $product= DB::table('producten')->where('id', '=', $id)->get();
+        return view('product.product', compact('product'));
+
     }
 
 }
