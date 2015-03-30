@@ -6,8 +6,8 @@
         CATEGORIEN
         </div>
     @foreach($categorien as $categorie)
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">{{$categorie->naam}}</button>
+         <div class="btn-group" role="group">
+                <a href="{{$categorie->id}}" class="btn btn-default" role="button">{{$categorie->naam}}</a>
         </div>
     @endforeach
 

@@ -1,26 +1,27 @@
 <?php namespace App\Http\Controllers;
 
+use App\Product;
 use App\Http\Requests;
+use App\Categorie;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use DB;
 
 class ProductController extends Controller {
 
 	public function index(){
-        $categorien= DB::table('categorien')->get();
+        $categorien= Categorie::get();
 
         return view('product.index', compact('categorien'));
     }
 
     public function showCategory($id){
-    $producten= DB::table('categorie_has_producten')->join('producten','product_id','=','producten.id')->where('categorie_id', '=', $id)->get();
+    $producten= Product::where('Categorie', '=', $id)->get();
     return view('product.productlijst', compact('producten'));
 
         }
     public function showProduct($productid){
-        $product= DB::table('producten')->where('id', '=', $productid)->get();
+        $product= Product::where('id', '=', $productid)->get();
         return view('product.product', compact('product'));
 
     }

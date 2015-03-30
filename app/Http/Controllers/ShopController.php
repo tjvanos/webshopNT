@@ -1,15 +1,15 @@
 <?php namespace App\Http\Controllers;
 
+use App\Categorie;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use DB;
 
 class ShopController extends Controller {
 
     public function index(){
-        $categorien= DB::table('categorien')->get();
+        $categorien= Categorie::get();
         return view('shop.index', compact('categorien'));
     }
 
@@ -17,4 +17,7 @@ class ShopController extends Controller {
 
         return view('shop.about');
     }
+
+
+
 }

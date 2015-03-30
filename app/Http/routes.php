@@ -15,9 +15,16 @@ Route::get('/','ShopController@index');
 
 Route::get('about','ShopController@about');
 
+Route::get('admin','AdminController@index');
+
+Route::get('editCategories','AdminController@editCategories');
+
 Route::get('product','ProductController@index');
 
 Route::get('{id}','ProductController@showCategory');
 
 Route::get('{id}/{productid}','ProductController@showProduct');
+
+
+
 
