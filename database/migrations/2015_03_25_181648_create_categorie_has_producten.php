@@ -15,8 +15,8 @@ class CreateCategorieHasProducten extends Migration {
 		Schema::create('categorie_has_producten', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->foreign('categorie_id')->references('id')->on('categorien');
-            $table->foreign('product_id')->references('id')->on('producten');
+            $table->integer('categorie_id');
+            $table->integer('product_id');
 		});
 	}
 

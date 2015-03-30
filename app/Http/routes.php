@@ -17,4 +17,7 @@ Route::get('about','ShopController@about');
 
 Route::get('product','ProductController@index');
 
-Route::get('product/{id}','ProductController@showCategory');
+Route::get('{id}','ProductController@showCategory');
+
+Route::get('{id}/{productid}','ProductController@showProduct');
+

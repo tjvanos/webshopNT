@@ -19,8 +19,8 @@ class ProductController extends Controller {
     return view('product.productlijst', compact('producten'));
 
         }
-    public function showProduct($id){
-        $product= DB::table('producten')->where('id', '=', $id)->get();
+    public function showProduct($productid){
+        $product= DB::table('producten')->where('id', '=', $productid)->get();
         return view('product.product', compact('product'));
 
     }
